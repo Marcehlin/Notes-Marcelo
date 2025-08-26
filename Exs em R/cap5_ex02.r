@@ -7,51 +7,52 @@ inversa_cdf_geometrica <- function(p, u) {
 inversa_cdf_poisson_recursiva <- function(lam, u) {
   k <- 0
   p <- exp(-lam)  # P(X=0)
-  F_acm <- p  # Iniciamos com a probabilidade P(X=0)
-  
+  f_acm <- p  # Iniciamos com a probabilidade P(X=0)
+
   # Continuamos somando até que F >= u
-  while (u > F_acm) {
+  while (u > f_acm) {
     k <- k + 1
-    p <- p * lam / k  # Atualiza a probabilidade recursivamente para o próximo valor
-    F_acm <- F_acm + p
+    # Atualiza a probabilidade recursivamente para o próximo valor
+    p <- p * lam / k
+    f_acm <- f_acm + p
   }
-  
-  return(k)
+
+  return (k)
 }
 
-gerar_X_que_eh_va_mistura <- function(alpha,u,X1,X2){ #0 < alpha < 1
-    if (u<alpha){
-        X_mistura <- X1
-    } else{
-        X_mistura <- X2
-    }
-    return (X_mistura)
+gerar_x_mistura_v1 <- function(alpha, u, x1, x2) { #0 < alpha < 1
+  if (u < alpha) {
+    x_mistura <- x1
+  } else{
+    x_mistura <- x2
+  }
+  return (x_mistura)
 }
 u <- runif(1)
-X1_poisson <- inversa_cdf_poisson_recursiva(5,u)
-X1_poisson
+x1_poisson <- inversa_cdf_poisson_recursiva(5, u)
+x1_poisson
 
-X2_geometrica <- inversa_cdf_geometrica(0.2,u)
-X2_geometrica
+x2_geometrica <- inversa_cdf_geometrica(0.2, u)
+x2_geometrica
 
 gerar_mistura <- function(alpha,u){
-    if (u<alpha){
-        X_mistura <- inversa_cdf_poisson_recursiva(3,u)
-    } else{
-        X_mistura <- inversa_cdf_geometrica(0.5,u)
-    }
-    return (X_mistura)
+  if (u < alpha) {
+    x_mistura <- inversa_cdf_poisson_recursiva(3, u)
+  } else{
+    x_mistura <- inversa_cdf_geometrica(0.5, u)
+  }
+  return (x_mistura)
 }
 alpha = 0.8
-X_de_mistura_gerado <- gerar_X_que_eh_va_mistura(alpha,u,X1_poisson,X2_geometrica)
-X_de_mistura_gerado
+x_de_mistura_gerado <- gerar_x_mistura_v1(alpha, u, x1_poisson, x2_geometrica)
+x_de_mistura_gerado
 
 help(sapply)
 uniformes <- runif(1000)
 uniformes
 
 lam_poisson <- 3
-poissons <- sapply(uniformes,inversa_cdf_poisson_recursiva,lam =lam_poisson)
+poissons <- sapply(uniformes, inversa_cdf_poisson_recursiva, lam =lam_poisson)
 poissons
 hist(poissons)
 
