@@ -1,0 +1,6 @@
+set.seed(1)
+runif(1)
+runif(1)
+rexp(1)
+u <- runif(10000)
+hist(u)

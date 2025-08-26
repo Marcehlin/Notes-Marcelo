@@ -1,0 +1,30 @@
+    "workbench.colorTheme": "Catppuccin Dark Fixed",
+    "r.helpPanel.previewLocalPackages": [
+        "C:\\Users\\q2650\\scoop\\apps\\r\\4.5.1\\library"
+    ],
+        "r.libPaths": [
+        "C:\\Users\\q2650\\AppData\\Local\\R\\win-library\\4.5",
+        "C:\\Users\\q2650\\scoop\\apps\\r\\4.5.1\\library"
+    ]
+
+    {
+    "C_Cpp.default.compilerPath": "C:/msys64/ucrt64/bin/gcc.exe",
+    "workbench.colorCustomizations": {},
+    "python.defaultInterpreterPath": "C:\\Users\\q2650\\anaconda3\\python.exe",
+    "r.rpath.windows": "C:\\Users\\q2650\\scoop\\apps\\r\\4.5.1\\bin\\x64",
+    //"r.rterm.windows": "C:\\Users\\q2650\\scoop\\apps\\r\\4.5.1\\bin\\R.exe",
+    //"r.rterm.windows": "C:\\Users\\q2650\\anaconda3\\Scripts\\radian.exe",
+    "r.bracketedPaste": true,
+    "r.plot.useHttpgd": true,
+    "files.associations": {
+        "*.rmd": "markdown"
+    },
+    "workbench.colorTheme": "Catppuccin Dark Fixed",
+    "r.helpPanel.previewLocalPackages": [
+        "C:\\Users\\q2650\\scoop\\apps\\r\\4.5.1\\library"
+    ],
+    "r.libPaths": [
+        "C:\\Users\\q2650\\AppData\\Local\\R\\win-library\\4.5",
+        "C:\\Users\\q2650\\scoop\\apps\\r\\4.5.1\\library"
+    ]
+}
