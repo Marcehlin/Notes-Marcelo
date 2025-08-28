@@ -29,3 +29,10 @@ gerador_de_x <- function(n) {
 }
 X <- gerador_de_x(n)
 hist(X)
+
+n <- 10000
+u <- runif(n)
+bins <- findInterval(u, c(0.3, 0.4))
+bins
+hist(bins)
+help(findInterval)
