@@ -20,47 +20,23 @@ inversa_cdf_poisson_recursiva <- function(lam, u) {
   return (k)
 }
 
-gerar_x_mistura_v1 <- function(alpha, u, x1, x2) { #0 < alpha < 1
+gerar_mistura <- function(alpha, u) {
+  u2 <- runif(1)
   if (u < alpha) {
-    x_mistura <- x1
-  } else{
-    x_mistura <- x2
-  }
-  return (x_mistura)
-}
-u <- runif(1)
-x1_poisson <- inversa_cdf_poisson_recursiva(5, u)
-x1_poisson
-
-x2_geometrica <- inversa_cdf_geometrica(0.2, u)
-x2_geometrica
-
-gerar_mistura <- function(alpha,u){
-  if (u < alpha) {
-    x_mistura <- inversa_cdf_poisson_recursiva(3, u)
-  } else{
-    x_mistura <- inversa_cdf_geometrica(0.5, u)
+    x_mistura <- inversa_cdf_poisson_recursiva(3, u2)
+  } else {
+    x_mistura <- inversa_cdf_geometrica(0.5, u2)
   }
   return (x_mistura)
 }
 alpha = 0.8
-x_de_mistura_gerado <- gerar_x_mistura_v1(alpha, u, x1_poisson, x2_geometrica)
-x_de_mistura_gerado
 
-help(sapply)
-uniformes <- runif(1000)
-uniformes
+n <- 1000
+uniformes <- runif(n)
 
 lam_poisson <- 3
-poissons <- sapply(uniformes, inversa_cdf_poisson_recursiva, lam =lam_poisson)
-poissons
-hist(poissons)
 
 p_de_geometrica <- 0.5 # 0<p<1
-geometricas <- sapply(uniformes, inversa_cdf_geometrica, p = p_de_geometrica)
-geometricas
-hist(geometricas)
 
-mistura <- sapply(uniformes,gerar_mistura,alpha = alpha)
-mistura
+mistura <- sapply(uniformes, gerar_mistura, alpha = alpha)
 hist(mistura)
