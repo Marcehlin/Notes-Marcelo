@@ -1,4 +1,4 @@
-n <- 10000
+n <- 1000
 u <- runif(n)
 lambda <- 5
 k <- 6
@@ -13,6 +13,7 @@ curve(dweibull(x, shape = k, scale = lambda), col = "red", lwd = 2, add = TRUE)
 
 #usando ggplot
 # Criar um dataframe para o ggplot2
+library(ggplot2)
 data <- data.frame(X = X)
 p <- ggplot(data, aes(x = X)) +
   geom_histogram(aes(y = ..density..), bins = 30, fill = "lightcoral", color = "black")+
