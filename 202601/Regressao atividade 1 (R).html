@@ -7957,7 +7957,7 @@ Se a gente analisar de forma literal, a unidade km/l se refere à eficiência do
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [116]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [117]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-r"><pre><span></span><span class="n">correlacao</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">cor</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">Y</span><span class="p">)</span>
@@ -7971,8 +7971,8 @@ Se a gente analisar de forma literal, a unidade km/l se refere à eficiência do
 <span class="w">  </span><span class="n">Erro_absoluto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">abs</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="n">beta_0_chapeu</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">beta_0</span><span class="p">,</span>
 <span class="w">          </span><span class="n">beta_1_chapeu</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">beta_1</span><span class="p">)),</span>
 
-<span class="w">  </span><span class="n">Erro_relativo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">((</span><span class="n">beta_0_chapeu</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">beta_0</span><span class="p">)</span><span class="o">/</span><span class="n">beta_0</span><span class="p">,</span>
-<span class="w">            </span><span class="p">(</span><span class="n">beta_1_chapeu</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">beta_1</span><span class="p">)</span><span class="o">/</span><span class="n">beta_1</span><span class="p">)</span>
+<span class="w">  </span><span class="n">Erro_relativo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="n">beta_0_chapeu</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">beta_0</span><span class="p">)</span><span class="o">/</span><span class="n">beta_0</span><span class="p">,</span>
+<span class="w">            </span><span class="nf">abs</span><span class="p">(</span><span class="n">beta_1_chapeu</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">beta_1</span><span class="p">)</span><span class="o">/</span><span class="n">beta_1</span><span class="p">)</span>
 <span class="p">)</span>
 <span class="n">comparacao</span>
 </pre></div>
@@ -7997,8 +7997,8 @@ Se a gente analisar de forma literal, a unidade km/l se refere à eficiência do
 <table>
 <thead><tr><th></th><th scope="col">Parametro</th><th scope="col">Verdadeiro</th><th scope="col">Estimado</th><th scope="col">Erro_absoluto</th><th scope="col">Erro_relativo</th></tr></thead>
 <tbody>
-<tr><th scope="row">(Intercept)</th><td>Intercepto </td><td>5.000      </td><td>5.14600266 </td><td>0.146002661</td><td> 0.02920053</td></tr>
-<tr><th scope="row">X</th><td>Inclinação </td><td>0.015      </td><td>0.01361642 </td><td>0.001383579</td><td>-0.09223862</td></tr>
+<tr><th scope="row">(Intercept)</th><td>Intercepto </td><td>5.000      </td><td>5.14600266 </td><td>0.146002661</td><td>0.02920053 </td></tr>
+<tr><th scope="row">X</th><td>Inclinação </td><td>0.015      </td><td>0.01361642 </td><td>0.001383579</td><td>0.09223862 </td></tr>
 </tbody>
 </table>
 </div>
